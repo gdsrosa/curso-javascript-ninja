@@ -33,26 +33,12 @@ Crie uma função chamada `showTeamPosition` com as seguintes características:
     "Não temos a informação do time que está nessa posição."
 */
 function showTeamPosition(position) {
-    switch(position) {
-        case 1:
-            console.log('O time que está em ' + position + 'º lugar é o Santos.');
-            break;
-        case 2:
-            console.log('O time que está em ' + position + 'º lugar é o Palmeiras.');
-            break;
-        case 3:
-            console.log('O time que está em ' + position + 'º lugar é o Corinthians.');
-            break;
-        case 4:
-            console.log('O time que está em ' + position + 'º lugar é o Audax.');
-            break;
-        case 5:
-            console.log('O time que está em ' + position + 'º lugar é o São Paulo.');
-            break;
-        default:
-            console.log('Não temos a informação do time que está nessa posição.');
-            break;
+    if (position < 1 || position > 5) {
+        return 'Não temos a informação do time que está nessa posição.';
     }
+    return 'O time que está em ' + position + 'º lugar é o ' + teams[position - 1] + '.';
+
+
 }
 
 /*
